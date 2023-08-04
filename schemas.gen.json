@@ -58,6 +58,7 @@
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts",
+              "deco-sites/std/loaders/shopify/cart.ts",
               "deco-sites/std/loaders/vnda/cart.ts",
               "deco-sites/std/loaders/vnda/proxy.ts",
               "deco-sites/std/loaders/vtex/cart.ts",
@@ -3674,7 +3675,7 @@
       ],
       "title": "deco-sites/std/commerce/occ/client.ts@ConfigOCC"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvc2hvcGlmeS9jbGllbnQudHM=@ConfigShopify": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3Mvc2hvcGlmeS9hY2NvdW50cy9zaG9waWZ5LnRz@Account": {
       "type": "object",
       "allOf": [
         {
@@ -3697,7 +3698,7 @@
         "storeName",
         "storefrontAccessToken"
       ],
-      "title": "deco-sites/std/commerce/shopify/client.ts@ConfigShopify"
+      "title": "deco-sites/std/packs/shopify/accounts/shopify.ts@Account"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9hY2NvdW50cy92bmRhLnRz@Account": {
       "type": "object",
@@ -5135,6 +5136,53 @@
         "limit"
       ],
       "title": "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3Mvc2hvcGlmeS90eXBlcy50cw==@Cart": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "attribute": {
+              "title": "Attribute"
+            },
+            "attributes": {
+              "type": "array",
+              "items": {},
+              "title": "Attributes"
+            },
+            "buyerIdentity": {
+              "title": "Buyer Identity"
+            },
+            "id": {
+              "type": "string",
+              "title": "Id"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "title": "deco-sites/std/packs/shopify/types.ts@Cart"
+        },
+        {
+          "title": "deco-sites/std/loaders/shopify/cart.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/loaders/shopify/cart.ts"
+              ],
+              "default": "deco-sites/std/loaders/shopify/cart.ts"
+            }
+          }
+        }
+      ]
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS90eXBlcy50cw==@Property": {
       "type": "object",
@@ -9961,6 +10009,23 @@
       ],
       "title": "deco-cx/live/handlers/workflowRunner.ts@Config"
     },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9oYW5kbGVycy9zaXRlbWFwLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "include": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": "Include"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/std/packs/vtex/handlers/sitemap.ts@Props"
+    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]": {
       "anyOf": [
         {
@@ -10247,6 +10312,31 @@
       },
       "required": [],
       "title": "deco-sites/std/components/Analytics.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvc2hvcGlmeS9jbGllbnQudHM=@ConfigShopify": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+        }
+      ],
+      "properties": {
+        "storeName": {
+          "type": "string",
+          "description": "Shopify store name.",
+          "title": "Store Name"
+        },
+        "storefrontAccessToken": {
+          "type": "string",
+          "description": "Shopify storefront access token.",
+          "title": "Storefront Access Token"
+        }
+      },
+      "required": [
+        "storeName",
+        "storefrontAccessToken"
+      ],
+      "title": "deco-sites/std/commerce/shopify/client.ts@ConfigShopify"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
       "type": "string",
@@ -12113,7 +12203,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvc2hvcGlmeS9jbGllbnQudHM=@ConfigShopify"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvc2hvcGlmeS9hY2NvdW50cy9zaG9waWZ5LnRz@Account"
         }
       ],
       "required": [
@@ -12427,6 +12517,22 @@
             "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts"
           ],
           "default": "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5L2NhcnQudHM=": {
+      "title": "deco-sites/std/loaders/shopify/cart.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/loaders/shopify/cart.ts"
+          ],
+          "default": "deco-sites/std/loaders/shopify/cart.ts"
         }
       }
     },
@@ -12929,6 +13035,11 @@
     "ZGVjby1zaXRlcy9zdGQvaGFuZGxlcnMvdnRleC9zaXRlbWFwLnRz": {
       "title": "Sitemap Proxy",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9oYW5kbGVycy9zaXRlbWFwLnRz@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -14294,6 +14405,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdExpc3RpbmdQYWdlLnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5L2NhcnQudHM="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL2NhcnQudHM="
