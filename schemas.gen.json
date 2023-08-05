@@ -120,6 +120,7 @@
               "$live/actions/workflows/cancel.ts",
               "$live/actions/workflows/signal.ts",
               "$live/actions/workflows/start.ts",
+              "deco-sites/std/actions/shopify/cart/addItem.ts",
               "deco-sites/std/actions/vnda/cart/addItem.ts",
               "deco-sites/std/actions/vnda/cart/setShippingAddress.ts",
               "deco-sites/std/actions/vnda/cart/updateCoupon.ts",
@@ -13806,6 +13807,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy9zaG9waWZ5L2NhcnQvYWRkSXRlbS50cw==": {
+      "title": "deco-sites/std/actions/shopify/cart/addItem.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/actions/shopify/cart/addItem.ts"
+          ],
+          "default": "deco-sites/std/actions/shopify/cart/addItem.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92bmRhL2NhcnQvYWRkSXRlbS50cw==": {
       "title": "deco-sites/std/actions/vnda/cart/addItem.ts",
       "type": "object",
@@ -14647,6 +14664,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3Mvc3RhcnQudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy9zaG9waWZ5L2NhcnQvYWRkSXRlbS50cw=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92bmRhL2NhcnQvYWRkSXRlbS50cw=="
